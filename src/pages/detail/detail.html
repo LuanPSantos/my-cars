@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detalhes do carro, porra!</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <h3>É um {{car.model}}, porra!</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Modelo:</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">{{car.model}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Valor:</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">R$ {{car.price}},00</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Ano:</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">{{car.year}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Potência:</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">{{car.power}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Já fez o motor?</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">{{car.alreadyMadeEngine ? 'Sim' : 'Não'}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Já bateu?</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">{{car.alreadyHit ? 'Sim' : 'Não'}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Combustivel:</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">{{car.fuel == 'FLEX' ? 'Flex' : (car.fuel == 'GASOLINE' ? 'Gasolina' : 'Álcool')}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Tipo de injeção:</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">{{car.injectionType}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Quilometragem:</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">{{car.mileager}} mil Km</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        <p class="label">Nota geral:</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="label">{{car.score}} pontos</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button full="true" (click)="update()">Alterar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
