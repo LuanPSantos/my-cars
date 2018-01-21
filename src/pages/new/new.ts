@@ -4,6 +4,7 @@ import { CarService, Car } from '../../services/car.service';
 import { NavParams } from 'ionic-angular/navigation/nav-params';
 import { DetailPage } from '../detail/detail';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
+import { ListPage } from '../list/list';
 
 @Component({
   selector: 'page-new',
@@ -41,22 +42,26 @@ export class NewPage implements OnInit {
   ngOnInit() {
     let id = this.navParams.get('id');
     if (id) {
-      let car = this.service.get(id);
-      Object.assign(this.car, car);
+      this.service.get(id).then((car: Car) => {
+        Object.assign(this.car, car);
+      });
     }
 
     this.createForm();
   }
 
   save() {
-    if(this.car.id){
-      this.service.update(this.carForm.value);
-    }else{
-      this.service.insert(this.carForm.value)
-      .then((car: Car) => {
-        this.navCtrl.push(DetailPage, {id: car.id});
+    if (this.car.id) {
+      this.carForm.value.id = this.car.id;
+      this.service.update(this.carForm.value).then((car: Car) => {
+        this.navCtrl.setRoot(ListPage);
       });
-    }    
+    } else {
+      this.service.insert(this.carForm.value)
+        .then((car: Car) => {
+          this.navCtrl.setRoot(ListPage);
+        });
+    }
   }
 
   createForm() {

@@ -15,27 +15,25 @@
           <ion-col col-12>
             <ion-item>
               <ion-label floating>Model</ion-label>
-              <ion-input type="text" formControlName="model"></ion-input>
+              <ion-input type="text" formControlName="model" [value]="car.model"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
-
 
         <ion-row>
           <ion-col col-12>
             <ion-item>
               <ion-label floating>Valor</ion-label>
-              <ion-input type="number" formControlName="price"></ion-input>
+              <ion-input type="number" formControlName="price" [value]="car.price"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
-
 
         <ion-row>
           <ion-col col-12>
             <ion-item>
               <ion-label floating>Ano</ion-label>
-              <ion-input type="number" formControlName="year"></ion-input>
+              <ion-input type="number" formControlName="year" [value]="car.year"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -44,7 +42,7 @@
           <ion-col col-12>
             <ion-item>
               <ion-label>Potência</ion-label>
-              <ion-select formControlName="power">
+              <ion-select formControlName="power" [(ngModel)]="car.power">
                 <ion-option value="1.0">1.0</ion-option>
                 <ion-option value="1.3">1.3</ion-option>
                 <ion-option value="1.4">1.4</ion-option>
@@ -60,7 +58,7 @@
           <ion-col col-12>
             <ion-item>
               <ion-label>Já fez o motor?</ion-label>
-              <ion-checkbox formControlName="alreadyMadeEngine"></ion-checkbox>
+              <ion-checkbox formControlName="alreadyMadeEngine" [checked]="car.alreadyMadeEngine"></ion-checkbox>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -69,7 +67,7 @@
           <ion-col col-12>
             <ion-item>
               <ion-label>Já bateu?</ion-label>
-              <ion-checkbox formControlName="alreadyHit"></ion-checkbox>
+              <ion-checkbox formControlName="alreadyHit" [checked]="car.alreadyHit"></ion-checkbox>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -78,7 +76,7 @@
           <ion-col col-12>
             <ion-item>
               <ion-label>Combustivel</ion-label>
-              <ion-select formControlName="fuel">
+              <ion-select formControlName="fuel" [(ngModel)]="car.fuel">
                 <ion-option value="ETHANOL">Álcool</ion-option>
                 <ion-option value="GASOLINE">Gasolina</ion-option>
                 <ion-option value="FLEX">Flex</ion-option>
@@ -91,7 +89,7 @@
           <ion-col col-12>
             <ion-item>
               <ion-label>Tipo de injeção</ion-label>
-              <ion-select formControlName="injectionType">
+              <ion-select formControlName="injectionType" [(ngModel)]="car.injectionType">
                 <ion-option value="EFI">EFI</ion-option>
                 <ion-option value="MPFI">MPFI</ion-option>
               </ion-select>
@@ -103,7 +101,7 @@
           <ion-col col-12>
             <ion-item>
               <ion-label floating>Quilometragem (Mil Km)</ion-label>
-              <ion-input type="number" formControlName="mileager"></ion-input>
+              <ion-input type="number" formControlName="mileager" [value]="car.mileager"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -112,7 +110,7 @@
           <ion-col col-12>
             <ion-item>
               <ion-label>Nota geral</ion-label>
-              <ion-range min="0" max="10" step="1" snaps="true" color="primary" formControlName="score"></ion-range>
+              <ion-range min="0" max="10" step="1" snaps="true" color="primary" formControlName="score" [(ngModel)]="car.score"></ion-range>
             </ion-item>
           </ion-col>
         </ion-row>
