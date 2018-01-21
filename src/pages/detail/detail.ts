@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavParams } from 'ionic-angular/navigation/nav-params';
-import { CarService } from '../../services/car.service';
+import { CarService, Car } from '../../services/car.service';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
 import { NewPage } from '../new/new';
 
@@ -13,7 +13,20 @@ export class DetailPage implements OnInit {
     navParams: NavParams;
     service: CarService;
     navCtrl: NavController;
-    car: any = {};
+    car: Car = {
+        id: null,
+        model: '',
+        year: null,
+        price: null,
+        power: '',
+        alreadyMadeEngine: false,
+        alreadyHit: false,
+        fuel: '',
+        injectionType: '',
+        mileager: null,
+        score: null
+    };
+
     constructor(navParams: NavParams, navCtrl: NavController, service: CarService) {
         this.navParams = navParams;
         this.service = service;
@@ -21,13 +34,15 @@ export class DetailPage implements OnInit {
     }
 
     ngOnInit() {
-        Object.assign(this.car, this.navParams.get('car'));
+        let id = this.navParams.get('id');
+        let car = this.service.get(id);
+        Object.assign(this.car, car);
         console.log(this.car);
     }
 
-    update(){
+    update() {
         this.navCtrl.setRoot(NewPage, {
-            car: this.car
+            id: this.car.id
         });
     }
 }

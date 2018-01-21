@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Detalhes do carro, porra!</ion-title>
+    <ion-title>Detalhes</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,97 +12,97 @@
   <ion-grid>
     <ion-row>
       <ion-col col-12>
-        <h3>É um {{car.model}}, porra!</h3>
+        <h3 class="h3-title">{{car.model}} - {{car.year}}</h3>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Modelo:</p>
+        <p class="p-label">Modelo:</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">{{car.model}}</p>
+        <p class="p-label">{{car.model}}</p>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Valor:</p>
+        <p class="p-label">Valor:</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">R$ {{car.price}},00</p>
+        <p class="p-label">R$ {{car.price}},00</p>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Ano:</p>
+        <p class="p-label">Ano:</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">{{car.year}}</p>
+        <p class="p-label">{{car.year}}</p>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Potência:</p>
+        <p class="p-label">Potência:</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">{{car.power}}</p>
+        <p class="p-label">{{car.power}}</p>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Já fez o motor?</p>
+        <p class="p-label">Já fez o motor?</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">{{car.alreadyMadeEngine ? 'Sim' : 'Não'}}</p>
+        <p class="p-label">{{car.alreadyMadeEngine ? 'Sim' : 'Não'}}</p>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Já bateu?</p>
+        <p class="p-label">Já bateu?</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">{{car.alreadyHit ? 'Sim' : 'Não'}}</p>
+        <p class="p-label">{{car.alreadyHit ? 'Sim' : 'Não'}}</p>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Combustivel:</p>
+        <p class="p-label">Combustivel:</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">{{car.fuel == 'FLEX' ? 'Flex' : (car.fuel == 'GASOLINE' ? 'Gasolina' : 'Álcool')}}</p>
+        <p class="p-label">{{car.fuel == 'FLEX' ? 'Flex' : (car.fuel == 'GASOLINE' ? 'Gasolina' : 'Álcool')}}</p>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Tipo de injeção:</p>
+        <p class="p-label">Tipo de injeção:</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">{{car.injectionType}}</p>
+        <p class="p-label">{{car.injectionType}}</p>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Quilometragem:</p>
+        <p class="p-label">Quilometragem:</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">{{car.mileager}} mil Km</p>
+        <p class="p-label">{{car.mileager}} mil Km</p>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col col-8>
-        <p class="label">Nota geral:</p>
+        <p class="p-label">Nota geral:</p>
       </ion-col>
       <ion-col col-4>
-        <p class="label">{{car.score}} pontos</p>
+        <p class="p-label">{{car.score}} pontos</p>
       </ion-col>
     </ion-row>
     <ion-row>

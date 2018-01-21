@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CarService } from '../../services/car.service';
+import { CarService, Car } from '../../services/car.service';
 import { NavParams } from 'ionic-angular/navigation/nav-params';
+import { DetailPage } from '../detail/detail';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
 
 @Component({
   selector: 'page-new',
@@ -14,28 +16,32 @@ export class NewPage implements OnInit {
   service: CarService;
   fb: FormBuilder;
   navParams: NavParams;
-  car: any = {
+  navCtrl: NavController;
+  car: Car = {
+    id: null,
     model: '',
-    year: '',
-    price: '',
+    year: null,
+    price: null,
     power: '',
     alreadyMadeEngine: false,
     alreadyHit: false,
     fuel: '',
     injectionType: '',
-    mileager: '',
-    score: ''
-  }
+    mileager: null,
+    score: null
+  };
 
-  constructor(fb: FormBuilder, service: CarService, navParams: NavParams) {
+  constructor(fb: FormBuilder, service: CarService, navParams: NavParams, navCtrl: NavController) {
     this.service = service;
     this.fb = fb;
     this.navParams = navParams;
+    this.navCtrl = navCtrl;
   }
 
   ngOnInit() {
-    let car = this.navParams.get('car');
-    if (car) {
+    let id = this.navParams.get('id');
+    if (id) {
+      let car = this.service.get(id);
       Object.assign(this.car, car);
     }
 
@@ -43,7 +49,14 @@ export class NewPage implements OnInit {
   }
 
   save() {
-    this.service.insert(this.carForm.value);
+    if(this.car.id){
+      this.service.update(this.carForm.value);
+    }else{
+      this.service.insert(this.carForm.value)
+      .then((car: Car) => {
+        this.navCtrl.push(DetailPage, {id: car.id});
+      });
+    }    
   }
 
   createForm() {
