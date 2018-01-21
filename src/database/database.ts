@@ -24,7 +24,7 @@ export class DatabaseProvider {
   private createTables(db: SQLiteObject) {
     // Criando as tabelas
     db.sqlBatch([
-      ['DROP TABLE cars'],
+      //['DROP TABLE cars'],
       ['CREATE TABLE IF NOT EXISTS cars ( id integer primary key AUTOINCREMENT NOT NULL, model varchar(50), year integer, price integer, power varchar(3), alreadyMadeEngine integer, alreadyHit integer, fuel varchar(20), injectionType varchar(6), mileager integer, score integer)']])
       .then(() => console.log('Tabelas criadas'))
       .catch(e => console.error('Erro ao criar as tabelas', e));

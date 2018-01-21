@@ -7,6 +7,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  
+<ion-content>
+  <ion-grid *ngIf="hasData == false">
+    <ion-row>
+      <ion-col col-12>
+        <h4 class="h3-title">Nada aqui...</h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <canvas height="300" *ngIf="hasData" baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+    [chartType]="barChartType">
+  </canvas>
 </ion-content>

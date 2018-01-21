@@ -93,7 +93,6 @@ export class CarService {
                 let car: Car = new Car();
                 Object.assign(car, item);
                 cars.push(car);
-                console.log(cars);
               }
 
               return cars;

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CarService, Car } from '../../services/car.service';
 import { NavParams } from 'ionic-angular/navigation/nav-params';
-import { DetailPage } from '../detail/detail';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
 import { ListPage } from '../list/list';
 
